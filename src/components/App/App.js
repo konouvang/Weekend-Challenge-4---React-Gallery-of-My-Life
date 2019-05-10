@@ -24,7 +24,18 @@ class App extends Component {
       })
     });
   }
-
+  likeImage = (event) => {
+    console.log(event.target);
+    const imageIndex = event.target.dataset.id;
+    const imageId = this.state.images[imageIndex].id;
+    axios.put(`/gallery/like/${imageId}`)
+      .then((response) => {
+        this.getImages();
+      }).catch((err) => {
+        console.log(err);
+      });
+  }
+  
 
 
   render() {
@@ -38,6 +49,7 @@ class App extends Component {
          {indvImage.description}
          <br/>
          Likes: {indvImage.likes}
+         <button data-id={i} onClick={this.likeImage}>Like</button>
         </p>
       );
     });
