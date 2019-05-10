@@ -11,6 +11,10 @@ class App extends Component {
         <br/>
         <p>Gallery goes here</p>
         <img src="images/goat_small.jpg"/>
+        <img src="images/chick.jpg"/>
+        <img src="images/duckling.jpg"/>
+        <img src="images/kitty.jpg"/>
+        <img src="images/puppy.jpg"/>
       </div>
     );
   }
