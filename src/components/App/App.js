@@ -15,7 +15,7 @@ class App extends Component {
   getImages() {
     axios({
       method: 'GET',
-      url: '/images',
+      url: '/gallery',
     })
     .then((response) => {
       console.log(response);
@@ -25,9 +25,22 @@ class App extends Component {
     });
   }
 
-  
+
 
   render() {
+    console.log(this.state.images)
+    const htmlImage = this.state.images.map((indvImage, i) => {
+      console.log(indvImage);
+      return (
+        <p key={i}>
+          <img src={indvImage.path} alt={indvImage.description}/>
+         <br/>
+         {indvImage.description}
+         <br/>
+         Likes: {indvImage.likes}
+        </p>
+      );
+    });
     return (
       <div className="App">
         <header className="App-header">
@@ -35,13 +48,7 @@ class App extends Component {
         </header>
         <br/>
         <p>Gallery goes here</p>
-        <galleryItems />
-
-        <img src="images/goat_small.jpg"/>
-        <img src="images/chick.jpg"/>
-        <img src="images/duckling.jpg"/>
-        <img src="images/kitty.jpg"/>
-        <img src="images/puppy.jpg"/>
+        {htmlImage}
       </div>
     );
   }
