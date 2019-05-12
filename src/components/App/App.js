@@ -36,6 +36,10 @@ class App extends Component {
       });
   }
   
+  showDescription = (event) => {
+    console.log(event.target);
+    
+  }
 
 
   render() {
@@ -44,7 +48,7 @@ class App extends Component {
       console.log(indvImage);
       return (
         <p key={i}>
-          <img src={indvImage.path} alt={indvImage.description}/>
+          <img src={indvImage.path} alt={indvImage.description} data-id={i} onClick={this.showDescription}/>
          <br/>
          {indvImage.description}
          <br/>
