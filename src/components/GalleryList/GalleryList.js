@@ -11,10 +11,8 @@ class GalleryList extends Component {
     return (
       <div>
           <div>
-              
           </div>
           <div>
-    
           </div>
       </div>
     );
