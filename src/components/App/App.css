@@ -24,10 +24,21 @@
 
 img {
   position: relative;
-  float: left;
+  float: center;
   width:  100px;
   height: 100px;
   background-position: 50% 50%;
   background-repeat:   no-repeat;
   background-size:     cover;
 }
+
+#wrapper .text {
+  position:relative;
+  bottom:30px;
+  left:0px;
+  visibility:hidden;
+  }
+  
+  #wrapper:hover .text {
+  visibility:visible;
+  }

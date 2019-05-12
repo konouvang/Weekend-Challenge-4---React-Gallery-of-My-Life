@@ -47,14 +47,18 @@ class App extends Component {
     const htmlImage = this.state.images.map((indvImage, i) => {
       console.log(indvImage);
       return (
+        <div id="wrapper">
         <p key={i}>
-          <img src={indvImage.path} alt={indvImage.description} data-id={i} onClick={this.showDescription}/>
+          <img src={indvImage.path} alt={indvImage.description} data-id={i} onClick={this.showDescription} class="hover"/>
          <br/>
+         <p class="text">
          {indvImage.description}
+         </p>
          <br/>
          Likes: {indvImage.likes}
          <button data-id={i} onClick={this.likeImage}>Like</button>
         </p>
+        </div>
       );
     });
     return (
