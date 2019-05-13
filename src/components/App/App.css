@@ -42,3 +42,24 @@ img {
   #wrapper:hover .text {
   visibility:visible;
   }
+
+  .pannel {
+    padding: 12px;
+    margin: 12px;
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .pannel:hover {
+    background-color: deepskyblue;
+    border-color: navy;
+  }
+  
+  .description {
+    display: none;
+  }
+  
+  .description-show {
+    display: block;
+  }

@@ -7,6 +7,7 @@ class App extends Component {
     newImages: {
     },
     images: [],
+    isDescriptionVisible: false,
   }
   componentDidMount() {
     console.log('componentDidMount works');
@@ -38,15 +39,29 @@ class App extends Component {
   
   showDescription = (event) => {
     console.log(event.target);
-    
-  }
+    let newDescState = {};
+  
+      if (this.state.isDescriptionVisible === false) {
+        newDescState.isDescriptionVisible = true;
+      } else if (this.state.isDescriptionVisible === true) {
+        newDescState.isDescriptionVisible = false;
+      }
+      
+      this.setState(newDescState);
+    }
 
 
   render() {
+    let descriptionStyling = 'description';
+      
+      if (this.state.isDescriptionVisible === true) {
+        descriptionStyling = 'description description-show';
+      }
     console.log(this.state.images)
     const htmlImage = this.state.images.map((indvImage, i) => {
       console.log(indvImage);
       return (
+        
         <div id="wrapper">
         <p key={i}>
           <img src={indvImage.path} alt={indvImage.description} data-id={i} onClick={this.showDescription} class="hover"/>
@@ -54,6 +69,10 @@ class App extends Component {
          <p class="text">
          {indvImage.description}
          </p>
+         <div className={descriptionStyling}>
+            DESCRIPTION: {indvImage.description}
+          </div>
+         
          <br/>
          Likes: {indvImage.likes}
          <button data-id={i} onClick={this.likeImage}>Like</button>
