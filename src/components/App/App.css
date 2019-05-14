@@ -36,12 +36,11 @@ img {
   position:relative;
   bottom:30px;
   left:0px;
-  visibility:hidden;
   }
   
-  #wrapper:hover .text {
+  /* #wrapper:hover .text {
   visibility:visible;
-  }
+  } */
 
   .pannel {
     padding: 12px;
