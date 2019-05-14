@@ -14,7 +14,7 @@ class GalleryList extends Component {
         key={i} 
         id={indvImage.id} 
         path={indvImage.path} 
-        showDescription={indvImage.description}
+        description={indvImage.description}
         likes={indvImage.likes}
         likeImage={this.props.likeImage} 
       />

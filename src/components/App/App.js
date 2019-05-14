@@ -31,8 +31,7 @@ class App extends Component {
 
   likeImage = (event) => {
     console.log(event.target);
-    const imageIndex = event.target.dataset.id;
-    const imageId = this.state.images[imageIndex].id;
+    const imageId = event.target.dataset.id;
     this.putLikes(imageId);
   }
 
